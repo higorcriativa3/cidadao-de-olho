@@ -1,7 +1,7 @@
 <?php
 
   //Require API call
-  require('../controllers/services/returnDeputy.php');
+  require '../controllers/services/returnDeputy.php';
   //Require DB infos
   require './dbconfig.php';
 
@@ -50,9 +50,10 @@
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       // prepare sql and bind parameters
-      $queryHandle = $conn->prepare("INSERT INTO `months` (`id`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`) VALUES (:id, :1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12)");
+      $queryHandle = $conn->prepare("INSERT INTO `months` (`id`, `name`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `11`, `12`) VALUES (:id, :name, :1, :2, :3, :4, :5, :6, :7, :8, :9, :10, :11, :12)");
 
       $queryHandle->bindParam(':id', $Deputy->id);
+      $queryHandle->bindParam(':name', $Deputy->nome);
       $queryHandle->bindParam(':1', $month[1]);
       $queryHandle->bindParam(':2', $month[2]);
       $queryHandle->bindParam(':3', $month[3]);
