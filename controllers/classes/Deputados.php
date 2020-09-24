@@ -1,9 +1,13 @@
-<?php
+<?php  
 
   class Deputados {
 
+    //Method Top 5
     public function top5() {
-      $conn = new PDO('mysql: host=localhost; dbname=cidadao_de_olho;', 'root', '');      
+      //Require DB infos
+      require '../model/dbconfig.php';
+
+      $conn = new PDO('mysql:host='.$host.';dbname='.$db_name.';charset=utf8', $username, $password);      
 
       $sql = "SELECT * FROM `months`";
       $sql = $conn->prepare($sql);
@@ -47,11 +51,11 @@
 
           $topFive[] = array(
             'mes'.$monthNumber => array(
-              'primeiro' => $v[0],
-              'segundo' => $v[1],
-              'terceiro' => $v[2],
-              'quarto' => $v[3],
-              'quinto' => $v[4],
+              '1' => $v[0],
+              '2' => $v[1],
+              '3' => $v[2],
+              '4' => $v[3],
+              '5' => $v[4],
             )
           );
 
@@ -70,6 +74,7 @@
 
     } 
 
+    //Method Social Media
     public function redes() {
       //Call to API
       $urlForPhoneDirectory = "http://dadosabertos.almg.gov.br/ws/deputados/lista_telefonica?formato=json";
