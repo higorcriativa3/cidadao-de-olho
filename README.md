@@ -34,6 +34,6 @@ usar o arquivo SQL em ```model/cidadao_de_olho.sql``` é a opção mais rápida.
 
 <p align="center">
     <img alt="" title="" src="img/api_top5.JPG">
-    <img alt="" title="" src="img/api_top5.JPG">    
+    <img alt="" title="" src="img/api_redes.JPG">    
 </p>
 
